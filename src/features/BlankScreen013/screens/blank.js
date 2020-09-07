@@ -1,23 +1,67 @@
-import React from "react";
-import { View, Image, ImageBackground } from "react-native";
-import { withStyles, Text, Button, CheckBox, Radio, Toggle, Icon, Input, Datepicker } from 'react-native-ui-kitten';
-import Slider from '@react-native-community/slider';
-import { SlideMenuIcon } from "../../../navigator/slideMenuIcon"
+import React, { Component } from 'react'
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput
+} from 'react-native'
 
-export class _Blank extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerLeft: <SlideMenuIcon navigationProps={navigation} />,
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
     };
-  };
+  }
 
-  state = { }
-
-  render = () => <View style={this.props.themedStyle.container}></View>;
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Visual App Builder
+        </Text>
+        <Text style={styles.text}>
+          The preview is interactive!
+        </Text>
+        <TextInput
+          style={styles.input}
+          value={this.state.value}
+          onChangeText={(text) => this.setState({ value: text })}
+        />
+        <Text style={styles.text}>
+          Hello {this.state.value}!
+        </Text>
+      </View>
+    )
+  }
 }
 
-export default Blank = withStyles(_Blank, theme => ({
+const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme["color-basic-100"]
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 24,
+    textAlign: 'center'
+  },
+  text: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 20
+  },
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    width: 150,
+    fontSize: 10,
+    padding: 8
   }
-}));
+})
+
+AppRegistry.registerComponent('App', () => App)
