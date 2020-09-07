@@ -12,27 +12,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      name: ''
     };
+  }
+  
+  welcomeUser(name) {
+    if (name) {
+      return <Text style={styles.text}>Hello {name}</Text>;
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Visual App Builder
+          My App
         </Text>
         <Text style={styles.text}>
-          The preview is interactive!
+          Enter your name
         </Text>
         <TextInput
           style={styles.input}
-          value={this.state.value}
-          onChangeText={(text) => this.setState({ value: text })}
+          value={this.state.name}
+          onChangeText={(text) => this.setState({ name: text })}
         />
-        <Text style={styles.text}>
-          Hello {this.state.value}!
-        </Text>
+        {this.welcomeUser(this.state.name)}
       </View>
     )
   }
