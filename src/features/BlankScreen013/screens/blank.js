@@ -18,7 +18,7 @@ class App extends Component {
   
   welcomeUser(name) {
     if (name) {
-      return <Text style={styles.text}>Hello {name}</Text>;
+      return <Text style={styles.text}>Hello {name}!</Text>;
     }
   }
 
