@@ -29,7 +29,7 @@ class App extends Component {
           My App
         </Text>
         <Text style={styles.text}>
-          Enter your name
+          Enter your name!
         </Text>
         <TextInput
           style={styles.input}
