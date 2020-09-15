@@ -9,9 +9,12 @@ import {
 } from 'react-native'
 import Slider from '@react-native-community/slider';
 
+const daniel = require("daniel-test");
+
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(daniel)
     this.state = {
       name: ''
     };
