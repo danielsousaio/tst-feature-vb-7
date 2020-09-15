@@ -16,6 +16,7 @@ const eva = require("daniel-test").eva;
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(eva.dark)
     this.state = {
       name: ''
     };
