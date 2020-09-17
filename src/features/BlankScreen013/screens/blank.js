@@ -6,17 +6,10 @@ import {
   View,
   TextInput
 } from 'react-native'
-import Slider from '@react-native-community/slider';
-
-const Button = require("daniel-test").Button;
-const ApplicationProvider = require("daniel-test").ApplicationProvider;
-const Layout = require("daniel-test").Layout;
-const eva = require("daniel-test").eva;
 
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(eva.dark)
     this.state = {
       name: ''
     };
@@ -30,12 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <ApplicationProvider {...eva} theme={eva.light}>
-      <Layout>
       <View style={styles.container}>
-        <Button>
-          UI-Kitten Button!
-        </Button>
         {/*<Slider
           style={{width: 200, height: 40}}
           minimumValue={0}
@@ -56,8 +44,6 @@ class App extends Component {
         />
         {this.welcomeUser(this.state.name)}
       </View>
-      </Layout>
-      </ApplicationProvider>
     )
   }
 }
